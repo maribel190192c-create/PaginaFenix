@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MueblesFenix - Tienda de Muebles del Hogar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="menu container">
+           <a href="#" class="logo">MueblesFenix</a>
+           <input type="checkbox" id="menu" />
+           <label for="menu" >
+            <img src="imagenes/menu.png" class="menu-icono" alt="menu">
+        </label>
+         <nav class="navbar">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#categorias">Categorías</a></li>
+                <li><a href="#contacto">Contacto</a></li>        
+            </ul>
+         </nav>
+         <div class="user-actions">
+            <ul>
+                <li class="submenu">
+                    <img id="img-carrito" src="imagenes/car.svg" alt="carrito">
+                    <span id="carrito-count" class="carrito-count">0</span>
+                    <div id="carrito" class="carrito-dropdown">
+                        <h3>Carrito de Compras</h3>
+                        <table id="lista-carrito">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Total</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                        <div class="carrito-total">
+                            <p>Subtotal: $<span id="subtotal">0</span></p>
+                            <p>Envío: $<span id="envio">0</span></p>
+                            <p class="total-final">Total: $<span id="total">0</span></p>
+                        </div>
+                        <div class="carrito-actions">
+                            <a href="#" id="vaciar-carrito" class="btn-3">Vaciar Carrito</a>
+                            <a href="#" id="proceder-pago" class="btn-3">Proceder al Pago</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="submenu">
+                    <img id="img-usuario" src="imagenes/usuario.png" alt="usuario">
+                    <div id="usuario" class="usuario-dropdown">
+                        <div id="usuario-no-login">
+                            <a href="#" id="btn-login" class="btn-4">Iniciar Sesión</a>
+                            <a href="Indexusuario.html" class="btn-4">Registrarse</a>
+                        </div>
+                        <div id="usuario-login" style="display: none;">
+                            <p>Bienvenido, <span id="nombre-usuario"></span></p>
+                            <a href="#" id="btn-logout" class="btn-4">Cerrar Sesión</a>
+                            <a href="#" id="btn-mis-pedidos" class="btn-4">Mis Pedidos</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+           </div>
+        </div>
+
+        <div class="header-content container" id="inicio">
+            <div class="header-txt">
+                <span>Bienvenido a MueblesFenix</span>
+                <span>Encuentra los muebles perfectos para tu hogar</span>
+                <p>
+                   MueblesFenix es tu tienda especializada en muebles de alta calidad para el hogar. 
+                   Ofrecemos una amplia gama de productos para oficina, habitación, sala y comedor, 
+                   diseñados para transformar tu espacio en un lugar único y acogedor. 
+                   Con envío a domicilio y seguimiento de pedidos, hacemos que decorar tu hogar sea fácil y seguro.
+                </p>
+                <div class="butons">
+                    <a href="#productos" class="btn-1">Ver Productos</a>
+                    <a href="#categorias" class="btn-1">Explorar Categorías</a>
+                </div>                      
+            </div>
+            <div class="header-img">
+                <img src="imagenes/pantalla inicial.jpg" alt="Muebles de hogar">
+            </div>
+        </div>
+
+    </header>
+
+    <section class="categorias container" id="categorias">
+         <h2>Nuestras Categorías</h2>
+         <p>Explora nuestra amplia gama de muebles organizados por categorías</p>
+
+        <div class="categoria-grid">
+            <div class="categoria-item b1" data-categoria="oficina">
+                <div class="categoria-txt">
+                    <h3>Muebles de Oficina</h3>
+                    <p>Escritorios, sillas ergonómicas y archivadores</p>
+                </div>
+                <div class="categoria-img">
+                    <img src="imagenes/oficna.jpg" alt="Muebles de oficina">
+                </div>
+            </div>
+
+            <div class="categoria-item b2" data-categoria="sala">
+                <div class="categoria-txt">
+                    <h3>Salas y Sofás</h3>
+                    <p>Conjuntos de sala, sofás y mesas de centro</p>
+                </div>
+                <div class="categoria-img">
+                    <img src="imagenes/sala.jpg" alt="Muebles de sala">
+                </div>
+            </div>
+
+            <div class="categoria-item b3" data-categoria="dormitorio">
+                <div class="categoria-txt">
+                    <h3>Dormitorios</h3>
+                    <p>Camas, cómodas y armarios para tu habitación</p>
+                </div>
+                <div class="categoria-img">
+                    <img src="imagenes/Cama.jpeg" alt="Muebles de dormitorio">
+                </div>
+            </div>
+
+            <div class="categoria-item b4" data-categoria="comedor">
+                <div class="categoria-txt">
+                    <h3>Comedores</h3>
+                    <p>Mesas, sillas y juegos de comedor completos</p>
+                </div>
+                <div class="categoria-img">
+                    <img src="imagenes/comedor.jpg" alt="Muebles de comedor">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="products container" id="productos">
+        <h2>Nuestros Productos</h2>
+        <p>Descubre nuestra selección de muebles de alta calidad</p>
+        
+        <div class="filtros">
+            <button class="filtro-btn active" data-categoria="todos">Todos</button>
+            <button class="filtro-btn" data-categoria="oficina">Oficina</button>
+            <button class="filtro-btn" data-categoria="sala">Sala</button>
+            <button class="filtro-btn" data-categoria="dormitorio">Dormitorio</button>
+            <button class="filtro-btn" data-categoria="comedor">Comedor</button>
+        </div>
+
+        <div class="box-container" id="lista-productos">
+            <!-- Productos de Comedor -->
+            <div class="box" data-categoria="comedor">
+                <img src="imagenes/comedorP.jpg" alt="Juego de Comedor Premium">
+                <div class="products-txt">
+                    <h3>Juego de Comedor Premium</h3>
+                    <p>Mesa para 6 personas con sillas tapizadas</p>
+                    <p class="precio">$2.700.000</p>
+                    <div class="cantidad-control">
+                        <button class="btn-cantidad" data-action="decrease">-</button>
+                        <input type="number" class="cantidad-input" value="1" min="1" max="10">
+                        <button class="btn-cantidad" data-action="increase">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-3" data-id="1" data-precio="2700000">
+                        Agregar al carrito
+                    </a>
+                </div>
+            </div>
+
+            <!-- Productos de Sala -->
+            <div class="box" data-categoria="sala">
+                <img src="imagenes/salaP.jpg" alt="Conjunto de Sala Premium">
+                <div class="products-txt">
+                    <h3>Conjunto de Sala Premium</h3>
+                    <p>Sofá de 3 puestos con mesa de centro</p>
+                    <p class="precio">$3.400.000</p>
+                    <div class="cantidad-control">
+                        <button class="btn-cantidad" data-action="decrease">-</button>
+                        <input type="number" class="cantidad-input" value="1" min="1" max="10">
+                        <button class="btn-cantidad" data-action="increase">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-3" data-id="2" data-precio="3400000">
+                        Agregar al carrito
+                    </a>
+                </div>
+            </div>
+
+            <!-- Productos de Dormitorio -->
+            <div class="box" data-categoria="dormitorio">
+                <img src="imagenes/CamaP.jpg" alt="Juego de Dormitorio Premium">
+                <div class="products-txt">
+                    <h3>Juego de Dormitorio Premium</h3>
+                    <p>Cama king size con cómoda y mesas de noche</p>
+                    <p class="precio">$2.300.000</p>
+                    <div class="cantidad-control">
+                        <button class="btn-cantidad" data-action="decrease">-</button>
+                        <input type="number" class="cantidad-input" value="1" min="1" max="10">
+                        <button class="btn-cantidad" data-action="increase">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-3" data-id="3" data-precio="2300000">
+                        Agregar al carrito
+                    </a>
+                </div>
+            </div>
+
+            <!-- Productos de Oficina -->
+            <div class="box" data-categoria="oficina">
+                <img src="imagenes/oficinaP.jpg" alt="Escritorio de Oficina Premium">
+                <div class="products-txt">
+                    <h3>Escritorio de Oficina Premium</h3>
+                    <p>Escritorio ejecutivo con silla ergonómica</p>
+                    <p class="precio">$3.700.000</p>
+                    <div class="cantidad-control">
+                        <button class="btn-cantidad" data-action="decrease">-</button>
+                        <input type="number" class="cantidad-input" value="1" min="1" max="10">
+                        <button class="btn-cantidad" data-action="increase">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-3" data-id="4" data-precio="3700000">
+                        Agregar al carrito
+                    </a>
+                </div>
+            </div>
+
+            <!-- Productos adicionales -->
+            <div class="box" data-categoria="sala">
+                <img src="imagenes/salaP.jpg" alt="Sofá Individual">
+                <div class="products-txt">
+                    <h3>Sofá Individual</h3>
+                    <p>Sofá de 2 puestos para espacios pequeños</p>
+                    <p class="precio">$1.800.000</p>
+                    <div class="cantidad-control">
+                        <button class="btn-cantidad" data-action="decrease">-</button>
+                        <input type="number" class="cantidad-input" value="1" min="1" max="10">
+                        <button class="btn-cantidad" data-action="increase">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-3" data-id="5" data-precio="1800000">
+                        Agregar al carrito
+                    </a>
+                </div>
+            </div>
+
+            <div class="box" data-categoria="oficina">
+                <img src="imagenes/oficinaP.jpg" alt="Silla Ejecutiva">
+                <div class="products-txt">
+                    <h3>Silla Ejecutiva</h3>
+                    <p>Silla ergonómica con respaldo alto</p>
+                    <p class="precio">$850.000</p>
+                    <div class="cantidad-control">
+                        <button class="btn-cantidad" data-action="decrease">-</button>
+                        <input type="number" class="cantidad-input" value="1" min="1" max="10">
+                        <button class="btn-cantidad" data-action="increase">+</button>
+                    </div>
+                    <a href="#" class="agregar-carrito btn-3" data-id="6" data-precio="850000">
+                        Agregar al carrito
+                    </a>
+                </div>
+            </div>
+        </div>
+             
+    </main>
+
+    <!-- Modal de Login -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="form-login">
+                <div class="input-group">
+                    <label for="login-usuario">Usuario o Email</label>
+                    <input type="text" id="login-usuario" name="usuario" required>
+                </div>
+                <div class="input-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn-1">Iniciar Sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div id="modal-checkout" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Finalizar Compra</h2>
+            <form id="form-checkout">
+                <div class="checkout-info">
+                    <h3>Información de Envío</h3>
+                    <div class="input-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" id="direccion" name="direccion" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input type="text" id="ciudad" name="ciudad" required>
+                    </div>
+                </div>
+                
+                <div class="checkout-resumen">
+                    <h3>Resumen del Pedido</h3>
+                    <div id="resumen-pedido"></div>
+                    <div class="total-checkout">
+                        <p>Subtotal: $<span id="subtotal-checkout">0</span></p>
+                        <p>Envío: $<span id="envio-checkout">0</span></p>
+                        <p class="total-final">Total: $<span id="total-checkout">0</span></p>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-1">Confirmar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Pedidos -->
+    <div id="modal-pedidos" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mis Pedidos</h2>
+            <div id="lista-pedidos">
+                <p>No hay pedidos registrados</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>MueblesFenix</h3>
+                    <p>Tu tienda de confianza para muebles del hogar</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Tel: (601) 123-4567</p>
+                    <p>Email: info@mueblesfenix.com</p>
+                    <p>Dirección: Calle 123 #45-67, Bogotá</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Horarios</h3>
+                    <p>Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+                    <p>Sábados: 9:00 AM - 4:00 PM</p>
+                    <p>Domingos: Cerrado</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+    </html>
